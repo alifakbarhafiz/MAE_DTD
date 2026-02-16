@@ -58,11 +58,11 @@ def train_mae(config_path: str, device: torch.device | None = None) -> Path:
     ckpt_dir = get_ckpt_dir(paths.get("ckpt_dir", "experiments/checkpoints"), run_name)
 
     train_cfg = cfg.get("training", {})
-    epochs = train_cfg.get("epochs", 150)
-    lr = train_cfg.get("lr", 1.5e-4)
-    weight_decay = train_cfg.get("weight_decay", 0.05)
-    warmup_epochs = train_cfg.get("warmup_epochs", 10)
-    min_lr = train_cfg.get("min_lr", 1e-6)
+    epochs = int(train_cfg.get("epochs", 150))
+    lr = float(train_cfg.get("lr", 1.5e-4))
+    weight_decay = float(train_cfg.get("weight_decay", 0.05))
+    warmup_epochs = int(train_cfg.get("warmup_epochs", 10))
+    min_lr = float(train_cfg.get("min_lr", 1e-6))
 
     optimizer = get_optimizer(model.parameters(), lr=lr, weight_decay=weight_decay)
     steps_per_epoch = len(train_loader)
