@@ -1,0 +1,19 @@
+name: mae-dtd
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pytorch>=2.0
+  - torchvision
+  - numpy>=1.24
+  - pyyaml>=6.0
+  - tqdm
+  - scikit-learn
+  - scipy
+  - matplotlib
+  - pillow
+  - pip
+  - pip:
+    - tensorboard>=2.12.0

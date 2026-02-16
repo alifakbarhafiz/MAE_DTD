@@ -1,0 +1,4 @@
+# Extends base — 75% masking (standard baseline)
+_base_: base.yaml
+mask_ratio: 0.75
+run_name: mask75

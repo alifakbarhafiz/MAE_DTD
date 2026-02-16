@@ -1,0 +1,4 @@
+# Extends base — 95% masking (extreme)
+_base_: base.yaml
+mask_ratio: 0.95
+run_name: mask95

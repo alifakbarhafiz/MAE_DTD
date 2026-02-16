@@ -1,0 +1,46 @@
+# Base config — shared across all mask-ratio experiments
+# Override mask_ratio in mask75/mask90/mask95.yaml
+
+project: mae-dtd
+seed: 42
+
+# Data
+data:
+  name: dtd
+  root: data/dtd
+  image_size: 224
+  batch_size: 64
+  num_workers: 4
+  split: 1  # DTD has 10 splits; use 1 for reproducibility
+
+# Model (ViT-Tiny + MAE decoder)
+model:
+  arch: vit_tiny
+  patch_size: 16
+  in_chans: 3
+  embed_dim: 192
+  depth: 12
+  num_heads: 3
+  mlp_ratio: 4.0
+  decoder_embed_dim: 512
+  decoder_depth: 8
+  decoder_num_heads: 16
+  norm_pix_loss: true
+
+# Masking (override in mask75/mask90/mask95)
+mask_ratio: 0.75
+
+# Training
+training:
+  epochs: 150
+  lr: 1.5e-4
+  weight_decay: 0.05
+  warmup_epochs: 10
+  min_lr: 1e-6
+
+# Paths
+paths:
+  exp_dir: experiments
+  log_dir: experiments/logs
+  ckpt_dir: experiments/checkpoints
+  results_dir: experiments/results
