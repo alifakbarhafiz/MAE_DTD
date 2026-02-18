@@ -1,5 +1,5 @@
 # MAE on Texture-Only Images (DTD)
-
+![Sample Images After Reconstruction](demo_image.png)
 **Masked Autoencoders under extreme context scarcity on the Describable Textures Dataset.**
 
 ## Goal
